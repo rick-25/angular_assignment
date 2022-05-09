@@ -9,7 +9,8 @@
                     <div class="text-block">1. Name of participant <span style="color: red;">*</span></div>
                 </div>
                 <div class="answer" aria-posinset="0">
-                    <input type="text" name="username" id="" placeholder="Enter your answer">
+                    <input type="text" name="username" id="" placeholder="Enter your answer"
+                        [(ngModel)]="selectedOption.name">
                 </div>
             </div>
             <div class="question">
@@ -18,21 +19,21 @@
                 </div>
                 <div class="answer" aria-posinset="1">
                     <div class="checkbox">
-                        <input type="checkbox" name="task" aria-checked="false" value="SIEO" id="SIEO">
+                        <input type="checkbox" name="task" aria-checked="false" value="SIEO" id="SIEO" (click)="updateContest($event)">
                         <label class="text-block" for="SIEO">SIEO</label>
                     </div>
                     <div class="checkbox">
-                        <input type="checkbox" name="task" aria-checked="false" value="SIMO" id="SIMO">
+                        <input type="checkbox" name="task" aria-checked="false" value="SIMO" id="SIMO" (click)="updateContest($event)">
                         <label class="text-block" for="SIMO">SIMO</label>
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" name="task" aria-checked="false" value="Grads Olympiad"
-                            id="Grads-Olympiad">
+                            id="Grads-Olympiad" (click)="updateContest($event)">
                         <label class="text-block" for="Grads-Olympiad">Grads Olympiad</label>
                     </div>
                     <div class="checkbox">
                         <input type="checkbox" name="task" aria-checked="false" value="Finance Olympiad"
-                            id="Finance-Olympiad">
+                            id="Finance-Olympiad" (click)="updateContest($event)">
                         <label class="text-block" for="Finance-Olympiad">Finance Olympiad</label>
                     </div>
                 </div>
@@ -46,10 +47,10 @@
                 </div>
                 <div class="answer" aria-posinset="2">
                     <div class="range">
-                        <div *ngFor="let i of nums">
-                            <div class="star" [attr.aria-posinset]="i" (mouseover)="updateStarPos($event)">
-                                <span *ngIf="options[2].value >= i">★</span>
-                                <span *ngIf="options[2].value < i">☆</span>
+                        <div *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+                            <div class="star" [attr.aria-posinset]="i" (mouseover)="updateQuality($event)">
+                                <span *ngIf="selectedOption.quality >= i">★</span>
+                                <span *ngIf="selectedOption.quality < i">☆</span>
                             </div>
                         </div>
                     </div>
@@ -57,9 +58,9 @@
             </div>
         </div>
         <div class="submit">
-            <button class="submit-button">Submit</button>
+            <button class="submit-button" (click)="showReport($event)">Submit</button>
         </div>
-        <div class="submessage text-block">
+        <div class="password-notice">
             Never give out your password. <a href="#">Report abuse</a>
         </div>
     </div>

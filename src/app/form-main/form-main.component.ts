@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Report } from '../Report';
 
 
-
-interface Text {
-  value: string;
-}
-interface Checkbox {
-  values: string[];
-}
-interface Range {
-  value: number;
-}
 
 
 
@@ -21,21 +12,30 @@ interface Range {
 })
 export class FormMainComponent implements OnInit {
 
-  options: any[] = [
-    {value: ''}, { values: [] }, { value: -1 }
-  ];
+  selectedOption: Report;
   
-  nums = [1, 2, 3, 4, 5];
-
-  updateStarPos(e: any) {
-    const questionNo: number = e.target.parentNode.parentNode.parentNode.parentNode.getAttribute("aria-posinset");
-    const option: number = e.target.parentNode.getAttribute("aria-posinset");
-    console.log(questionNo, option);
-
-    this.options[questionNo].value = option;
+  updateContest(e: any) {
+    let contests = this.selectedOption.contests;
+    const value = e.target.value;
+    const index = contests.indexOf(value);
+    if(index === -1) contests.push(value);
+    else contests.splice(index, 1);
   }
+  updateQuality(e: any) {
+    const option: number = e.target.parentNode.getAttribute("aria-posinset");
+    this.selectedOption.quality = option;
+  }
+  showReport(e: any) {
+    alert(`Collected data ... \nName: ${this.selectedOption.name}\nContests: ${this.selectedOption.contests}\nQuality: ${this.selectedOption.quality}`);
 
-  constructor() { }
+  }
+  constructor() { 
+    this.selectedOption = {
+      name: '',
+      contests: [],
+      quality: -1
+    };
+  }
 
   ngOnInit(): void {
   }

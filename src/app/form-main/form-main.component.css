@@ -67,6 +67,11 @@
     width: 20px;
     height: 18px;
     outline-offset: 0;
+    cursor: pointer;
+}
+
+.checkbox label {
+    cursor: pointer;
 }
 
 
@@ -98,6 +103,14 @@
     width: 180px;
 
     cursor: pointer;
+}
+
+
+.container .password-notice {
+    clear: both;
+    color: #414141;
+    font-size: 12px;
+    margin: 20px 0 0 20px;
 }
 
 @media screen and (max-width: 640px) {
