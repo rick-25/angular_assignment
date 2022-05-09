@@ -1,0 +1,6 @@
+#app-form {
+    max-width: 850px;
+    height: 100vh;
+    border: 2px solid red;
+    margin: 50px auto;
+}
