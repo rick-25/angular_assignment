@@ -85,6 +85,21 @@
     cursor: pointer;
 }
 
+
+.container .submit button {
+    background-color: #053870;
+    border: 1px solid transparent;
+    color: #fff;
+    margin: 20px 0 0 20px;
+    font-size: 15px;
+    font-weight: 400;
+    height: 40px;
+    text-align: center;
+    width: 180px;
+
+    cursor: pointer;
+}
+
 @media screen and (max-width: 640px) {
     #form-main {
         padding: 20px 0;
