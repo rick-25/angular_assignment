@@ -33,7 +33,7 @@ export class FormMainComponent implements OnInit {
     this.selectedOption = {
       name: '',
       contests: [],
-      quality: -1
+      quality: 0
     };
   }
 

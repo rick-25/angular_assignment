@@ -2,7 +2,6 @@
     background: #fff;
     opacity: .97;
     padding: 20px 30px 70px;
-
 }
 
 .container .required-message {
@@ -117,10 +116,20 @@
     #form-main {
         padding: 20px 0;
     }
+
+    #form-main>* {
+        padding-left: 0;
+    }
+
+    .container .submit button {
+        width: 100%;
+        margin: 20px 0 0 0;
+    }
 }
 
 @media screen and (max-width: 750px) {
     #form-main {
-        padding: 20px;
+        /* padding: 20px; */
     }
+
 }
