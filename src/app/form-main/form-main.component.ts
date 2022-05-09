@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
 
-interface Question {
-  id: number;
-  text: string;
-  required: boolean;
-  valueType: string;
-  selectedValue?: string | boolean;
+
+interface Text {
+  value: string;
 }
+interface Checkbox {
+  values: string[];
+}
+interface Range {
+  value: number;
+}
+
+
 
 @Component({
   selector: 'app-form-main',
@@ -16,14 +21,19 @@ interface Question {
 })
 export class FormMainComponent implements OnInit {
 
-  questions?: Question[] = [
-    {
-      id: 1,
-      text: 'Are you gay',
-      required: true,
-      valueType: 'text'
-    }
+  options: any[] = [
+    {value: ''}, { values: [] }, { value: -1 }
   ];
+  
+  nums = [1, 2, 3, 4, 5];
+
+  updateStarPos(e: any) {
+    const questionNo: number = e.target.parentNode.parentNode.parentNode.parentNode.getAttribute("aria-posinset");
+    const option: number = e.target.parentNode.getAttribute("aria-posinset");
+    console.log(questionNo, option);
+
+    this.options[questionNo].value = option;
+  }
 
   constructor() { }
 

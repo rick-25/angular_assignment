@@ -30,7 +30,7 @@
     margin-top: 20px;
 }
 
-.answer > input[type="text"] {
+.answer>input[type="text"] {
     background-color: #fff;
     background-image: none;
     border: 1px solid #a6a6a6;
@@ -50,8 +50,39 @@
     width: 100%;
 }
 
-.answer > input[type="text"]:focus {
+.answer>input[type="text"]:focus {
     outline: 1px solid #333;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.checkbox input[type="checkbox"],
+.radio input[type="radio"] {
+    width: 20px;
+    height: 18px;
+    outline-offset: 0;
+}
+
+
+
+.question .answer .range {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.question .answer .star {
+    font-size: 35px;
+    color: #053870;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 640px) {

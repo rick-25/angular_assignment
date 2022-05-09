@@ -8,10 +8,53 @@
                 <div class="question-lable">
                     <div class="text-block">1. Name of participant <span style="color: red;">*</span></div>
                 </div>
-                <div class="answer">
-                    <input type="text" name="" id="" placeholder="Enter your answer">
+                <div class="answer" aria-posinset="0">
+                    <input type="text" name="username" id="" placeholder="Enter your answer">
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-lable">
+                    <div class="text-block">2. Participated for? <span style="color: red;">*</span></div>
+                </div>
+                <div class="answer" aria-posinset="1">
+                    <div class="checkbox">
+                        <input type="checkbox" name="task" aria-checked="false" value="SIEO" id="SIEO">
+                        <label class="text-block" for="SIEO">SIEO</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" name="task" aria-checked="false" value="SIMO" id="SIMO">
+                        <label class="text-block" for="SIMO">SIMO</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" name="task" aria-checked="false" value="Grads Olympiad"
+                            id="Grads-Olympiad">
+                        <label class="text-block" for="Grads-Olympiad">Grads Olympiad</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" name="task" aria-checked="false" value="Finance Olympiad"
+                            id="Finance-Olympiad">
+                        <label class="text-block" for="Finance-Olympiad">Finance Olympiad</label>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-lable">
+                    <div class="text-block">
+                        3.How was the quality of the questions asked?
+                        <span style="color: red;">*</span>
+                    </div>
+                </div>
+                <div class="answer" aria-posinset="2">
+                    <div class="range">
+                        <div *ngFor="let i of nums">
+                            <div class="star" [attr.aria-posinset]="i" (mouseover)="updateStarPos($event)">
+                                <span *ngIf="options[2].value >= i">★</span>
+                                <span *ngIf="options[2].value < i">☆</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>  
+    </div>
 </div>
