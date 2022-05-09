@@ -1,0 +1,36 @@
+#form-footer {
+    border: 1px solid transparent;
+    background-color: rgba(244, 244, 244, .8);
+}
+
+.container {
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 10px 50px;
+    width: 100%;
+}
+
+.container .text-block {
+    color: #333;
+    font-size: 12px;
+    line-height: 1.3;
+    margin: 15px auto;
+    width: 100%;
+}
+
+.container .text-block a {
+    color: #084ea1;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 750px) {
+    .container {
+        padding: 10px 35px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        padding: 10px 15px;
+    }
+}

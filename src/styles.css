@@ -10,6 +10,8 @@ body {
     background-image: url('./assets/meeting.png');
     background-attachment: fixed;
     background-size: cover;
+    color: #333;
+    font-family: 'Segoe UI','Segoe WP',Tahoma,Arial,sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
 }

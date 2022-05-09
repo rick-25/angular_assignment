@@ -1,0 +1,20 @@
+#form-main {
+    background: #fff;
+    opacity: .97;
+    padding: 20px 30px 70px;
+
+}
+
+
+
+@media screen and (max-width: 640px) {
+    #form-main {
+        padding: 20px 0;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #form-main {
+        padding: 20px;
+    }
+}

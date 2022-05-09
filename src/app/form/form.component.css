@@ -1,6 +1,15 @@
 #app-form {
     max-width: 850px;
-    height: 100vh;
-    border: 2px solid red;
-    margin: 50px auto;
+    /* height: 100vh; */
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    overflow: auto; 
+}   
+
+@media screen and (max-width: 722px) {
+    #app-form {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 }
